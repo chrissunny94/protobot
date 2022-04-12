@@ -20,9 +20,13 @@ To test the Motor Controller without the ROS wrapper
 
 To test the Motor controller with ROS 
 
-	python saber.py
+	roslaunch protobot saber.py
 
 
+To make the script start at boot up 
+
+
+-  http://docs.ros.org/en/jade/api/robot_upstart/html/
 
 
 ## Pictures of the RObot
