@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #import arduinoserial
 from pysabertooth import Sabertooth
 from std_msgs.msg import String 
@@ -66,19 +66,19 @@ def translate(value, leftMin, leftMax, rightMin, rightMax):
 
 def callback(data):
     #print data
-    saber.text("m1:startup")
-    saber.text('1,p100')
-    saber.text('md:1000\r\n')
+    #saber.text("m1:startup")
+    #saber.text('1,p100')
+    #saber.text('md:1000\r\n')
     
-    saber.text('m2:startup')
-    saber.text('r1:1940\r\n')
-    saber.text('r2:1940\r\n')
+    #saber.text('m2:startup')
+    #saber.text('r1:1940\r\n')
+    #saber.text('r2:1940\r\n')
     speed = translate(data.linear.x,-1,1,-100,100)
     #speed = translate(data.linear.x,-1,1,-2047,2047)
-    SPEED = 'md: {}\r\n'.format(speed)
+    #SPEED = 'md: {}\r\n'.format(speed)
     angle = translate(-data.angular.z,-1,1,100,-100)
     #angle = str(translate(-data.angular.z,-1,1,2047,-2047))
-    ANGLE = 'mt: {}\r\n'.format(angle)
+    #ANGLE = 'mt: {}\r\n'.format(angle)
     #saber.text('m1:startup')
     #saber.drive(1,speed)
     #saber.drive(2,speed)
@@ -124,11 +124,7 @@ def sabertoothStatusCallback(data):
     
     battery = ('battery [mV]: {}'.format(saber.textGet('m2:getb'))) 
     print (battery , temperature)
-    #lcd.lcd_write(0x0C) #Cursor uitschakelen.
-    #lcd.lcd_write(0x01) #Scherm leegmaken.
-    #lcd.lcd_puts("Hallo", 1) #Tekst voor LCD display lijn 1.
-    #lcd.lcd_puts("  Wereld!", 2) #Tekst voor LCD display lijn 2.
-    #lcd.lcd_backlight(1) #Achterverlichting aanzetten.
+    
     
 
 
