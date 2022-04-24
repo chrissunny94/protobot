@@ -37,8 +37,8 @@ def translate(value, leftMin, leftMax, rightMin, rightMax):
     return rightMin + (valueScaled * rightSpan)
 
 def callback(data):
-    speed = translate(data.linear.x,-1,1,-100,100)
-    angle = translate(-data.angular.z,-1,1,100,-100)
+    speed = translate(data.linear.x,-2,2,-50,50)
+    angle = translate(-data.angular.z,-1,1,-50,50)
     if angle+speed > 100:
         speed1 = 100
     else :
